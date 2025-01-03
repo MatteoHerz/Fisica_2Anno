@@ -1,0 +1,167 @@
+\documentclass[x11names]{article}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[skins]{tcolorbox}
+\usepackage[version=4]{mhchem}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+%\usepackage{fouriernc}
+\usepackage{xymtex}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{leftindex}
+\usepackage{verbatim}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{amssymb}
+%\usepackage{graphicx}
+
+
+\definecolor{myblue}{RGB}{224, 245, 255} 
+\definecolor{myred}{RGB}{234, 222, 255}
+\definecolor{myorange}{RGB}{255, 102, 0}
+
+% box
+\newtcolorbox{es}[2][]{%
+	enhanced,colback=white,colframe=black,coltitle=black,
+	sharp corners,boxrule=0.4pt,
+	fonttitle=\itshape,
+	attach boxed title to top left={yshift=-0.5\baselineskip-0.4pt,xshift=2mm},
+	boxed title style={tile,size=minimal,left=0.5mm,right=0.5mm,
+		colback=white,before upper=\strut},
+	title=#2,#1
+}
+
+% definizioni
+\newtcolorbox{blues}[2][]{%
+	enhanced,colback=myblue,colframe=black,coltitle=black,
+	sharp corners,boxrule=0.4pt,
+	attach boxed title to top left={yshift=-0.5\baselineskip-0.4pt,xshift=2mm},
+	boxed title style={tile,size=minimal,left=0.5mm,right=0.5mm,
+		colback=myblue,before upper=\strut},
+	title=#2,#1
+}
+
+% teoremi
+\newtcolorbox{redes}[2][]{%
+	enhanced,colback=myred,colframe=black,coltitle=black,
+	sharp corners,boxrule=0.4pt,
+	fonttitle=\itshape,
+	attach boxed title to top left={yshift=-0.5\baselineskip-0.4pt,xshift=2mm},
+	boxed title style={tile,size=minimal,left=0.5mm,right=0.5mm,
+		colback=myred,before upper=\strut},
+	title=#2,#1
+}
+
+
+%% regole
+\renewcommand*\contentsname{Indice}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{2}
+\pgfplotsset{compat=1.15}
+
+
+\usetikzlibrary{arrows}
+
+
+\title{}
+\author{Matteo Herz}
+\date{}
+
+
+
+\begin{document}
+	
+\input{titlepage}
+\tableofcontents
+\newpage
+
+
+%\begin{center}
+%\fboxsep11pt
+%\colorbox{myblue}{\begin{minipage}{5.75in}
+%	\begin{blues}{Definizione: }
+%	\end{blues}
+%\end{minipage}}       
+%\end{center}
+
+%\begin{center}
+%\fboxsep11pt
+%\colorbox{myred}{\begin{minipage}{5.75in}
+%	\begin{redes}{}
+%	\subsubsection{Teorema:  }
+%	\end{redes}
+%\end{minipage}}        
+%\end{center}
+
+
+% DOCUMENT %
+
+
+\section{Integrali}
+\subsection{Integrali trigonometrici}
+\subsection{Integrali sulla retta reale}
+
+\section{Equazioni differenziali omogenee a paramentri non costanti}
+\subsection{Soluzione nell'intorno di un punto regolare}
+\subsection{Soluzione nell'intorno di una singolarità fuchsiana}
+
+\section{Fuorier}
+Data $L$ in $\mathbb{R}$ si definisce serie di Fourier di coefficienti $a_n \in \mathbb{C}$ la serie di funzioni
+
+\[
+	\sum_{n=-\infty}^{+\infty} a_n \frac{e^{ik_{n}x}}{\sqrt{L}} \quad k_n = \frac{2\pi}{L}nl
+\]
+
+\subsection{Serie di Fourier}
+\subsection{Trasformata di Fourier}
+\textbf{C.D.E.} Affinché $\mathscr{F}[f(x)]$ esista finita è \textbf{condizione sufficiente} che $f(x)$ sia \textbf{sommabile}. Inoltre il \textit{Teorema di Dirichlet} assicura come nel caso della serie di Fourier, la convergenza puntuale della trasformata a $f(x_0)$ nei punti in cui $f(x)$ è continua e a metà dei punti di discontinuità dove $f(x)$ presenta dei salti.\\
+Dunque affinché $f(x)$ sia sommabile devono essere rispettate \textbf{due condizioni}:
+\begin{align}
+	&\lim_{x \to x_0}(x-x_0)f(x) = 0 \quad\quad \forall x_0 \in \, ]-\infty,+\infty[ \\
+	&\lim_{x \to \pm\infty}xf(x) =  0
+\end{align}
+Più in generale però esistono funzioni non sommabili che ammettono trasformata di Fourier. \\Un esempio molto importante è la funzione:
+\[
+	f(x)=\frac{\sin(x)}{x} \quad\Longrightarrow\quad \mathscr{F}_{k}[f(x)] = \begin{cases}
+		\sqrt{\frac{1}{2}}\quad |x|<1 \\
+		\frac{1}{2}\sqrt{\frac{1}{2}}\quad |x|=1 \\
+		0 \quad |x|>1 
+	\end{cases} 
+\] 
+
+
+\subsection{Antitrasformata di Fourier}
+
+\section{Laplace}
+\subsection{Trasformata di Laplace}
+Prendiamo $f(t), \;\; t\in R\;\,$ e $\;f(t)e^{\alpha t},\;\; \alpha \in R$ \\
+Se $f(t)$ è un polinomio per $t \to +\infty$ $\Longrightarrow$ $\;f(t)e^{\alpha t} \to 0$, ma se $t \to -\infty$ la funzione esplode.\\Si introduce allora la $\theta(t)$, detta \textbf{Theta di Heaviside}
+
+\[
+	\theta(t) = \begin{cases}
+		1 \quad t 
+	\end{cases}
+\]
+\subsection{Antitraformata di Laplace}
+
+
+
+
+\end{document}
+
+
+
+ 
