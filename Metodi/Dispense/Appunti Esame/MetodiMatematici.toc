@@ -11,3 +11,4 @@
 \contentsline {section}{\numberline {4}Laplace}{2}{}%
 \contentsline {subsection}{\numberline {4.1}Trasformata di Laplace}{2}{}%
 \contentsline {subsection}{\numberline {4.2}Antitraformata di Laplace}{2}{}%
+\contentsline {subsection}{\numberline {4.3}Equazioni differenziali - Metodo di Laplace}{2}{}%
